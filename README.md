@@ -1,16 +1,16 @@
 # furima-39053
 
 ## usersテーブル
-| Column               | Type   | Option      | 
-| -------------------- | ------ | ----------- | 
-| nickname             | string | null: false | 
-| email                | string | null: false | 
-| encrypted_password   | string | null: false | 
-| last_name            | string | null: false | 
-| first_name           | string | null: false | 
-| last_name_kana       | string | null: false | 
-| first_name_kana      | string | null: false | 
-| birthday             | date   | null: false | 
+| Column               | Type   | Option       | 
+| -------------------- | ------ | -----------  | 
+| nickname             | string | null: false  | 
+| email                | string | unique: true | 
+| encrypted_password   | string | null: false  | 
+| last_name            | string | null: false  | 
+| first_name           | string | null: false  | 
+| last_name_kana       | string | null: false  | 
+| first_name_kana      | string | null: false  | 
+| birthday             | date   | null: false  | 
 
 ### Association
 
@@ -22,14 +22,14 @@
 | Column           | Type       | Option            | 
 | ---------------- | ---------- | ----------------- | 
 | name             | string     | null: false       | 
-| text             | text       | null: false       | 
+| item_text        | text       | null: false       | 
 | category_id      | integer    | null: false       | 
 | status_id        | integer    | null: false       | 
 | delivery_id      | integer    | null: false       | 
 | prefecture_id    | integer    | null: false       | 
-| delivery_days_id | integer    | null: false       | 
+| delivery_day_id  | integer    | null: false       | 
 | price            | integer    | null: false       | 
-| user             | references | foreign_key: true | 
+| user             | references | null: false       | 
 
 ### Association
 
@@ -40,8 +40,8 @@
 ## ordersテーブル
 | Column  | Type       | Option            | 
 | ------- | ---------- | ----------------- | 
-| user    | references | foreign_key: true | 
-| item    | references | foreign_key: true | 
+| user    | references | null: false       | 
+| item    | references | null: false       | 
 
 ### Association
 
@@ -58,7 +58,7 @@
 | block         | string     | null: false       | 
 | building      | string     |                   | 
 | phone_number  | string     | null: false       | 
-| order         | references | foreign_key: true | 
+| order         | references | null: false       | 
 
 ### Association
 
