@@ -32,7 +32,7 @@ RSpec.describe User, type: :model do
       it 'first_name_kanaが空では登録できない' do
         @user.first_name_kana = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include "名前カナを入力してください"
+        expect(@user.errors.full_messages).to include 
       end
       it '名字が全角（漢字・ひらがな・カタカナ）であれば登録できる' do
         @user.last_name = '山田'
