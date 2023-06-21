@@ -14,7 +14,7 @@ class User < ApplicationRecord
     # 存在すること・確認用を含めて2回入力・6字以上はdeviseのデフォルト実装のため省略
     # 半角英数字（空文字NG）以外の場合には、メッセージを出す
     
-    validates :nickname, uniqueness: true
+    validates :nickname
     # @含むこと・存在することはdeviseのデフォルト実装のため省略
     
     # 全角ひらがな、全角カタカナ、漢字
