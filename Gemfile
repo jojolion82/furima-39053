@@ -60,3 +60,13 @@ end
 group :production do
   gem 'pg'
 end
+
+gem 'devise'
+
+gem 'rspec-rails', '~> 4.0.0'
+
+gem 'factory_bot_rails'
+
+gem 'pry-rails'
+
+gem 'faker'
