@@ -16,7 +16,6 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :user_id
     validates :image
     validates :name
     validates :description
@@ -26,7 +25,7 @@ class Item < ApplicationRecord
     validates :delivery_area_id
     validates :shipping_date_id
     # 300円以上かつ9,999,999円以下で、半角数字でないと入力不可
-    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   end
 
   # ジャンルの選択が「--」の時は保存不可
