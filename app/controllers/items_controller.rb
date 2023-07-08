@@ -28,10 +28,13 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params)
-      redirect_to item_path
+    @item.update(item_params)
+    # バリデーションがOKであれば詳細画面へ
+    if @item.valid?
+      redirect_to item_path(item_params)
     else
-      render :edit
+      # NGであれば、エラー内容とデータを保持したままeditファイルを読み込み、エラーメッセージを表示させる
+      render 'edit'
     end
   end
 
