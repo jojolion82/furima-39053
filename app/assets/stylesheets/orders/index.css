@@ -105,12 +105,7 @@
   margin: 5px 5px;
 }
 
-.input-expiration-date-wrap {
-  width: 100%;
-  display: flex;
-  text-align: center;
-  line-height: 55px;
-}
+
 
 .input-expiration-date {
   width: 20%;
